@@ -84,3 +84,27 @@ function changeScale() {
 function scaleDown() {
   selectButtons.style.transform = "scale(1)";
 }
+
+window.addEventListener("load", () => {
+  alert("We are up and running, Captain");
+});
+
+//mouseleave
+const imgBlur = document.querySelector(".img-content");
+
+imgBlur.addEventListener("mouseleave", function (e) {
+  e.target.style.opacity = 0.33;
+  e.stopPropagation();
+});
+
+//context menu
+const btnThree = document.querySelector(".intro p");
+btnThree.addEventListener("contextmenu", (event) => {
+  btnThree.style.backgroundColor = "red";
+  event.stopPropagation();
+});
+
+const blogLink = document.querySelectorAll(".nav-link");
+blogLink[2].addEventListener("click", (e) => {
+  e.preventDefault();
+});
